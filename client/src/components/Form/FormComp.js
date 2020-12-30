@@ -3,11 +3,15 @@ import React, {useState} from 'react';
 import {Form, Input, Button} from 'antd';
 import {UserOutlined} from '@ant-design/icons';
 import FileBase from 'react-file-base64';
+import {useDispatch} from "react-redux";
+import {createPost} from "../../actions/posts";
 
 const {TextArea} = Input;
 const {Item, useForm} = Form;
 
 const FormComp = () => {
+
+    const dispatch = useDispatch();
 
     const [form] = useForm();
     const [requiredMark, setRequiredMarkType] = useState(true);
@@ -24,6 +28,12 @@ const FormComp = () => {
         setRequiredMarkType(requiredMark);
     };
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        dispatch(createPost(postData));
+    }
+
     return (
         <Form form={form}
               layout="vertical"
@@ -34,8 +44,7 @@ const FormComp = () => {
             <Item required
                   label="Title"
                   tooltip="This is a required field"
-                  rules={[{required: true, message: 'Please input your username!'}]}
-            >
+                  rules={[{required: true, message: 'Please enter the Title!'}]}>
                 <Input allowClear
                        placeholder="Title"
                        value={postData.title}
@@ -46,7 +55,8 @@ const FormComp = () => {
 
             <Item required
                   label="Creator"
-                  tooltip="This is a required field">
+                  tooltip="This is a required field"
+                  rules={[{required: true, message: 'Please enter the Creator!'}]}>
                 <TextArea placeholder="Creator"
                           value={postData.creator}
                           autoSize={{minRows: 3, maxRows: 5}}
@@ -56,7 +66,8 @@ const FormComp = () => {
 
             <Item required
                   label="Message"
-                  tooltip="This is a required field">
+                  tooltip="This is a required field"
+                  rules={[{required: true, message: 'Please enter the Message!'}]}>
                 <TextArea placeholder="Message"
                           value={postData.message}
                           autoSize={{minRows: 3, maxRows: 5}}
@@ -66,7 +77,8 @@ const FormComp = () => {
 
             <Item required
                   label="Tags"
-                  tooltip="This is a required field">
+                  tooltip="This is a required field"
+                  rules={[{required: true, message: 'Please enter the Tags!'}]}>
                 <TextArea placeholder="Tags"
                           value={postData.tags}
                           autoSize={{minRows: 3, maxRows: 5}}
@@ -76,18 +88,21 @@ const FormComp = () => {
 
             <Item required
                   label="File"
-                  tooltip="This is a required field">
+                  tooltip="This is a required field"
+                  rules={[{required: true, message: 'Please enter the File!'}]}>
                 <FileBase type='file'
                           multiple={false}
                           onDone={({base64}) => setPostData({...postData, selectedFile: base64})}/>
             </Item>
 
             <Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" htmlType="submit" block={true} size="large" onClick={handleSubmit}>
                     Submit
                 </Button>
-                {" "}
-                <Button type="secondary" htmlType="clear">
+            </Item>
+
+            <Item>
+                <Button type="secondary" htmlType="reset" danger={true} block={true}>
                     Clear
                 </Button>
             </Item>
