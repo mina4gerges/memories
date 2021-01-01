@@ -11,7 +11,7 @@ const Post = ({loading, data}) => {
         />
 
     // const {_id, title, message, creator, tags, selectedFile, likeCount, createdAt} = data;
-    const {_id, title, message} = data;
+    const {_id, title, message, selectedFile} = data;
 
     const onIconClick = action => () => {
         if (action === 'delete')
@@ -21,6 +21,7 @@ const Post = ({loading, data}) => {
     return <CardComponent
         title={title}
         loading={loading}
+        image={selectedFile}
         description={message}
         onIconClick={onIconClick}
     />
