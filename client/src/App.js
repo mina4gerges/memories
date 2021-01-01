@@ -3,10 +3,11 @@ import {Layout, Typography, Row, Col} from 'antd';
 import {useDispatch} from 'react-redux';
 
 import {getPosts} from './actions/posts';
+import {setIsLoading} from "./actions/loading";
 import memories from './images/memories.jpg';
 import Posts from "./components/Posts/Posts";
-import FormComp from "./components/Form/FormComp";
 
+import FormComp from "./components/Form/FormComp";
 import 'antd/dist/antd.css';
 import './style.css';
 
@@ -17,6 +18,7 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(setIsLoading(true));
         dispatch(getPosts())
     }, [dispatch])
 

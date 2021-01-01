@@ -32,6 +32,20 @@ const FormComp = () => {
         e.preventDefault();
 
         dispatch(createPost(postData));
+
+        handleClear(e);
+    }
+
+    const handleClear = e => {
+        e.preventDefault();
+
+        setPostData({
+            tags: '',
+            title: '',
+            creator: '',
+            message: '',
+            selectedFile: '',
+        })
     }
 
     return (
@@ -102,7 +116,7 @@ const FormComp = () => {
             </Item>
 
             <Item>
-                <Button type="secondary" htmlType="reset" danger={true} block={true}>
+                <Button type="secondary" htmlType="reset" danger={true} block={true} onClick={handleClear}>
                     Clear
                 </Button>
             </Item>

@@ -20,3 +20,15 @@ export const createPost = async (req, res) => {
         res.status(409).json({message: e.message});
     }
 }
+
+export const deletePost = async (req, res) => {
+    try {
+        const {postId} = req.body;
+
+        await PostMessage.remove({_id: postId});
+
+        res.status(201).json(postId);
+    } catch (e) {
+        res.status(409).json({message: e.message});
+    }
+}
