@@ -10,6 +10,9 @@ const posts = (posts = [], action) => {
         case 'REMOVE':
             return posts.filter(post => post._id !== action.payload);
 
+        case 'EDIT':
+            return posts.find(post => post._id !== action.payload);
+
         default:
             return posts;
     }

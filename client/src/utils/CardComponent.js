@@ -1,5 +1,5 @@
 import {Skeleton, Card, Image} from 'antd';
-import {EditOutlined, EllipsisOutlined, DeleteFilled} from '@ant-design/icons';
+import {EditFilled, DeleteFilled, LikeFilled} from '@ant-design/icons';
 
 const {Meta} = Card;
 
@@ -8,9 +8,9 @@ const CardComponent = ({title, description, loading, image, onIconClick}) => {
         <Card hoverable
               style={{width: 300, marginTop: 16}}
               actions={[
-                  <EditOutlined key="edit"/>,
+                  <LikeFilled key="like"/>,
+                  <EditFilled key="edit" onClick={onIconClick ? onIconClick('edit') : null}/>,
                   <DeleteFilled key="delete" onClick={onIconClick ? onIconClick('delete') : null}/>,
-                  <EllipsisOutlined key="ellipsis"/>,
               ]}
         >
             <Skeleton loading={loading} avatar active>

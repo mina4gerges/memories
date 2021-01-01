@@ -1,5 +1,5 @@
 import CardComponent from "../../../utils/CardComponent";
-import {removePost} from "../../../actions/posts";
+import {removePost, editPost} from "../../../actions/posts";
 import {useDispatch} from "react-redux";
 
 const Post = ({loading, data}) => {
@@ -14,8 +14,16 @@ const Post = ({loading, data}) => {
     const {_id, title, message, selectedFile} = data;
 
     const onIconClick = action => () => {
-        if (action === 'delete')
-            dispatch(removePost(_id))
+        switch (action) {
+            case "delete":
+                dispatch(removePost(_id));
+                break;
+            case "edit":
+                dispatch(editPost(_id, data));
+                break;
+            default:
+                break;
+        }
     }
 
     return <CardComponent
