@@ -30,7 +30,7 @@ const App = () => {
                         <Header className='app-bar'>
                             <Title level={2} className='heading'>
                                 Memories
-                                <img src={memories} alt='memories' height='40' className='image'/>
+                                {/*<img src={memories} alt='memories' height='40' className='image'/>*/}
                             </Title>
                         </Header>
                         <Row>
