@@ -11,7 +11,7 @@ const Post = ({loading, data}) => {
         />
 
     // const {_id, title, message, creator, tags, selectedFile, likeCount, createdAt} = data;
-    const {_id, title, message, selectedFile} = data;
+    const {_id, title, message, selectedFile,createdAt} = data;
 
     const onIconClick = action => () => {
         switch (action) {
@@ -31,6 +31,7 @@ const Post = ({loading, data}) => {
         loading={loading}
         image={selectedFile}
         description={message}
+        createdAt={createdAt}
         onIconClick={onIconClick}
     />
 }

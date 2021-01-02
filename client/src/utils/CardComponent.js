@@ -1,11 +1,14 @@
+import moment from 'moment';
 import {Skeleton, Card, Image} from 'antd';
 import {EditFilled, DeleteFilled, LikeFilled} from '@ant-design/icons';
 
 const {Meta} = Card;
 
-const CardComponent = ({title, description, loading, image, onIconClick}) => {
+const CardComponent = ({title, description, loading, image, createdAt, onIconClick}) => {
+
     return (
         <Card hoverable
+              title={title}
               style={{width: 300, marginTop: 16}}
               actions={[
                   <LikeFilled key="like"/>,
@@ -18,8 +21,8 @@ const CardComponent = ({title, description, loading, image, onIconClick}) => {
                     avatar={
                         <Image width={100} height={100} src={image}/>
                     }
-                    title={title}
                     description={description}
+                    title={moment(createdAt).fromNow()}
                 />
             </Skeleton>
         </Card>

@@ -1,17 +1,19 @@
+import {CREATE, DELETE, FETCH_ALL, UPDATE} from "../constants/actionTypes";
+
 const posts = (posts = [], action) => {
 
     switch (action.type) {
-        case 'FETCH_ALL':
+        case FETCH_ALL:
             return action.payload;
 
-        case 'CREATE':
+        case CREATE:
             return [...posts, action.payload];
 
-        case 'REMOVE':
+        case DELETE:
             return posts.filter(post => post._id !== action.payload);
 
-        case 'EDIT':
-            return posts.find(post => post._id !== action.payload);
+        case UPDATE:
+            return posts.map(post => post._id === action.payload._id ? action.payload.data : post)
 
         default:
             return posts;

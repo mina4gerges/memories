@@ -6,4 +6,5 @@
 # production
 /build
 
-secrets.js
+.env
+
