@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="547bc688-4e54-4894-97e0-a413b0730d72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.env.exemple" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Auth/icon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Auth/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Home/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Navbar/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Navbar/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/constants/secretes-exemple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/reducers/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Posts/Posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Posts/Posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/constants/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/images/memories.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/postMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/postMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,8 +98,16 @@
       <workItem from="1609189257291" duration="5310000" />
       <workItem from="1609262636824" duration="62000" />
       <workItem from="1609350008765" duration="20000" />
-      <workItem from="1610794303327" duration="14581000" />
+      <workItem from="1610794303327" duration="14730000" />
     </task>
+    <task id="LOCAL-00001" summary="introduce OAUTH + main fixes">
+      <created>1610817457683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610817457683</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,5 +124,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="introduce OAUTH + main fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduce OAUTH + main fixes" />
   </component>
 </project>

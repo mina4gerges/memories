@@ -25,3 +25,5 @@ yarn-error.log*
 .env
 
 src/constants/secretes.js
+
+.idea

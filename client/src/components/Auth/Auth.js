@@ -56,8 +56,6 @@ const Auth = () => {
         console.log('googleFailure ', e)
     }
 
-    console.log('process', process.env.GOOGLE_CLIENT_ID)
-
     return (
         <div className='auth-main'>
             <Card title='Welcome' className='auth-card'>
