@@ -1,0 +1,8 @@
+.navbar-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+}
+
+.navbar-button {
+}

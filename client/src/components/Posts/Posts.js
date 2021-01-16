@@ -8,9 +8,6 @@ const Posts = () => {
     const posts = useSelector(state => state.posts);
     const isLoading = useSelector(state => state.loading);
 
-    console.log("posts", posts);
-    console.log("isLoading", isLoading);
-
     if (isLoading)
         return <div>
             <Post loading={isLoading}/>

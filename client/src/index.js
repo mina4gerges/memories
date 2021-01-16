@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
+import dotenv from "dotenv";
 
 import reducers from './reducers';
 import App from './App';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
+
+dotenv.config();
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
