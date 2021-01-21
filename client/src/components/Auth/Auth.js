@@ -3,12 +3,13 @@ import {Card, Form, Input, Button, Checkbox} from "antd";
 import {GoogleLogin} from 'react-google-login';
 import {useDispatch} from "react-redux";
 import {useHistory} from 'react-router-dom';
-
 import Icon from "./icon";
+import {AUTH} from "../../constants/actionTypes";
+// import {GOOGLE_CLIENT_ID_EXAMPLE} from "../../constants/secretes-exemple";
+import {GOOGLE_CLIENT_ID} from "../../constants/secretes";
 
 import './styles.css';
-import {AUTH} from "../../constants/actionTypes";
-import {GOOGLE_CLIENT_ID_EXAMPLE} from "../../constants/secretes-exemple";
+import {signIn, signUp} from "../../actions/auth";
 
 const layout = {
     labelCol: {span: 8},
@@ -19,16 +20,36 @@ const tailLayout = {
     wrapperCol: {offset: 8, span: 16},
 };
 
+const initialState = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    repeatPassword: '',
+    remember: '',
+}
+
 const Auth = () => {
 
     const dispatch = useDispatch();
 
     const history = useHistory();
 
+    const [formData, setFormData] = useState(initialState);
     const [isSignUp, setIsSignUp] = useState(false);
 
     const onFinish = values => {
-        console.log('Success:', values);
+
+        const newFormData = {...formData, ...values};
+
+        if (isSignUp)
+            dispatch(signUp(newFormData, history));
+        else
+            dispatch(signIn(newFormData, history));
+
+        setFormData(newFormData);
+
+
     };
 
     const onFinishFailed = errorInfo => {
@@ -71,8 +92,8 @@ const Auth = () => {
                     <>
                         <Form.Item
                             label="Name"
-                            name="name"
-                            rules={[{required: true, message: 'Please input your name!'}]}
+                            name="firstName"
+                            rules={[{required: true, message: 'Please input your first name!'}]}
                         >
                             <Input
                                 placeholder='Name'
@@ -138,7 +159,7 @@ const Auth = () => {
 
                     <Form.Item {...tailLayout}>
                         <GoogleLogin
-                            clientId={GOOGLE_CLIENT_ID_EXAMPLE}
+                            clientId={GOOGLE_CLIENT_ID}
                             render={renderProps => (
                                 <Button
                                     type='default'
